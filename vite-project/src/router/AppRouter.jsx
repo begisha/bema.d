@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Profile from "../pages/Profile"; 
 
 export default function AppRouter() {
     const { isAuth } = useAuthStore();
@@ -10,6 +11,8 @@ export default function AppRouter() {
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/registr" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+
             <Route path="/" element={isAuth ? <h1>Welcomeeeeeeeeeeee!</h1> : <Navigate to="/login" />} />
             <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
